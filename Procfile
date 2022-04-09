@@ -1,1 +1,1 @@
-web: dotnet ./AwsPipelineDemo.dll
+web: dotnet ./AwsPipelineDemo.Example.dll
