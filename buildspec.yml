@@ -1,0 +1,26 @@
+﻿version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 5.0
+
+  pre_build:
+    commands:
+      - echo Restore started on `date`
+      - dotnet restore AwsPipelineDemo/AwsPipelineDemo.csproj
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Code build started
+      - dotnet build AwsPipelineDemo/AwsPipelineDemo.csproj
+
+  post_build:
+    commands:
+      - echo Publish started on `date`
+      - dotnet publish -c Release -o ./ AwsPipelineDemo/AwsPipelineDemo.csproj
+
+artifacts:
+  files:
+    - '**/*'
